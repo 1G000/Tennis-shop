@@ -25,7 +25,7 @@
                 <div class="item"><img src='img/babolat.jpg' alt="babolat-racket" class="item-photo">
                     <p>babolat fighter</p>
                     <span>12.05.2023</span>
-                    <button>Купить</button>
+                    <button class='buy-item' id="buy-btn">Купить</button>
                 </div>
                 <div class="item">Babolat</div>
                 <div class="item">Technifibre</div>
@@ -78,13 +78,48 @@
                 <div class="item">Babolat</div>
 
         </section>
-        <button class="back-to-top">Наверх</button>
+        <button type="submit" class="back-to-top" id="ontop-btn">Наверх</button>
+        <form class="modal" id="my-modal">
+            <div class="cart-box">
+                <h3>Корзина</h1>
+                    <div>
+                        <p>Укажите необходимое количество</p>
+                        <input type="text" placeholder="Введите число"></input>
+                    </div>
+
+                    <div>
+                        <p>Выберите цвет</p>
+                        <input type="radio">
+                        <p>Белый</p>
+                </h3>
+                </input>
+                <input type="radio">
+                <p>Желтый</p>
+                </h3>
+                </input>
+                <input type="radio">
+                <p>Зеленый</p>
+                </h3>
+                </input>
+                <input type="radio">
+                <p>Красный</p>
+                </h3>
+                </input>
+                </div>
+                <div>
+                    <p>Комментарий к заказу</p>
+                    <input type="text" placeholder="Текст Вашего комментария"></input>
+                </div>
+                <button class="buy-btn" id="buy-item">Купить</button>
+                <button class="close-btn" id="close-cart">Закрыть</button>
+            </div>
+        </form>
     </main>
 
     <footer>
         <p>2023</p>
     </footer>
-    <script src="/scripts/script.js"></script>
+    <script src="./scripts/scripts.js"></script>
 </body>
 
 </html>
