@@ -50,3 +50,13 @@ closeCartBtn.addEventListener("click", function () {
 buyItem.addEventListener("click", function () {
   alert("Поздравляем с покупкой!")
 })
+
+const switcher = document.querySelector(".switch")
+switcher.addEventListener("click", function () {
+  const elem = document.querySelector(".product-range")
+  elem.classList.toggle("dark-theme")
+  const elem1 = document.querySelector(".main-menu")
+  elem1.classList.toggle("main-menu-dark")
+  const elem2 = document.querySelector(".title")
+  elem2.classList.toggle("h1-dark")
+})

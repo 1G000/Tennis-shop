@@ -17,8 +17,17 @@ h1 {
     margin-bottom: 20px;
 }
 
+.h1-dark {
+    color: #f2f6f3;
+}
+
 h2 {
     padding: 10px 10px;
+}
+
+span {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .wrapper {
@@ -28,11 +37,24 @@ h2 {
 }
 
 .main-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin: 0 auto;
     background-color: salmon;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+}
+
+.main-menu-dark {
+    background-color: midnightblue;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
 }
 
 .categories {
@@ -55,21 +77,21 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: darkseagreen;
+    /* background-color: darkseagreen; */
 }
 
 .sneakers {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: skyblue;
+    /* background-color: skyblue; */
 }
 
 .t-shorts {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: greenyellow;
+    /* background-color: greenyellow; */
 }
 
 .items {
@@ -153,15 +175,27 @@ h2 {
     display: none;
 }
 
+.switch {
+    appearance: none;
+    width: 30px;
+    height: 20px;
+    border-radius: 5px;
+    box-shadow: inset -15px 0px 0px 0px rgba(192, 192, 192, 1);
+    background-color: white;
+    border: 1px solid rgba(192, 192, 192, 1);
+    outline: none;
+    transition: 0.2s;
+}
 
-/* span {
-        background: #f2f6f3;
-        ;
-        padding: 5px;
-    }
-    img {
-        border: 1px solid #f3f3f3;
-        background: #f2f6f3;
-        border-radius: 40px;
-        padding: 0px;
-    } */
+.switch:checked {
+    box-shadow: inset 15px 0px 0px 0px rgba(12, 76, 128, 0.5);
+    border: 1px solid rgba(33, 150, 243, 1);
+}
+
+.switch:focus {
+    outline-width: 0;
+}
+
+.dark-theme {
+    background-color: midnightblue;
+}
