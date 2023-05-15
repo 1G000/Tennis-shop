@@ -1,4 +1,4 @@
-import { rackets, sneakers } from "./data.js"
+import { rackets, sneakers, bags } from "./data.js"
 
 function addSection(wrapper) {
   const section = document.createElement("ul")
@@ -19,7 +19,7 @@ function createItems(items, container) {
     itemImg.alt = `${el.alt}`
     card.insertBefore(itemImg, card.children[1])
 
-    const itemName = document.createElement("h2")
+    const itemName = document.createElement("h3")
     itemName.classList.add("item-name")
     itemName.append(el.modelName)
     card.insertBefore(itemName, card.children[2])
@@ -41,9 +41,11 @@ function createItems(items, container) {
 
 const racketsContainer = addSection(document.querySelector(".rackets"))
 const sneakersContainer = addSection(document.querySelector(".sneakers"))
+const bagsContainer = addSection(document.querySelector(".bags"))
 
 createItems(rackets, racketsContainer)
 createItems(sneakers, sneakersContainer)
+createItems(bags, bagsContainer)
 
 const closeCartBtn = document.querySelector("#close-cart")
 const buyItem = document.querySelector("#my-modal")

@@ -8,10 +8,6 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline
-}
-
 h1 {
     margin-top: 20px;
 }
@@ -38,6 +34,10 @@ p {
     color: black
 }
 
+.dark-theme p {
+    color: #f2f6f3;
+}
+
 .wrapper {
     width: 1300px;
     margin: 0 auto;
@@ -58,7 +58,7 @@ p {
 }
 
 .dark-theme .main-menu {
-    background-color: midnightblue;
+    background-color: rgba(38, 38, 69, 0.968);
 }
 
 .right-side {
@@ -75,6 +75,14 @@ p {
 
 .product-type {
     padding: 10px;
+    font-weight: 900;
+}
+
+.product-type :hover {
+    text-decoration: underline;
+color: rgb(12, 12, 81);
+transform: translateY(-0.9px);
+
 }
 
 .product-range {
@@ -88,7 +96,7 @@ p {
     flex-direction: column;
     align-items: center;
     padding-top: 40px;
-    /* background-color: darkseagreen; */
+   
 }
 
 .sneakers {
@@ -96,15 +104,15 @@ p {
     flex-direction: column;
     align-items: center;
     padding-top: 40px;
-    /* background-color: skyblue; */
+  
 }
 
-.t-shorts {
+.bags {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 40px;
-    /* background-color: greenyellow; */
+    
 }
 
 .items {
@@ -120,15 +128,30 @@ p {
     flex-direction: column;
     align-items: center;
     width: 180px;
-    height: 350px;
+    height: 330px;
     padding: 10px;
-    border: 1px solid #ffffff;
+    border: 1px solid salmon;
     background: #f2f6f3;
     border-radius: 40px;
-    transition: box-shadow 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
     margin: 10px 10px;
-    cursor: pointer;
-}
+    }
+
+    .dark-theme .item {
+        background: rgba(127, 127, 208, 0.968);
+        border: 0;
+    }
+
+.item:hover {
+    
+        box-shadow: 0px 20px 30px rgba(250, 128, 114, 0.5);
+        transform: translateY(-5px);
+    }
+    .dark-theme .item:hover {
+        box-shadow: none;
+                transform: translateY(-5px);
+    }
+
 
 .back-to-top {
     position: fixed;
@@ -141,8 +164,9 @@ p {
 }
 
 .item-img {
-    width: 180px;
-    height: 240px;
+    width: 170px;
+    height: 230px;
+    border-radius: 40px;
 }
 
 .item-name {
@@ -151,12 +175,33 @@ p {
 }
 
 .item-date {
-    color: green;
+    color: rgb(0, 0, 0);
 }
 
 .buy-btn {
+    border: 0;
+    background-color: salmon;
     width: 60px;
     height: 25px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.dark-theme .buy-btn {
+    border: 0;
+    background-color: rgba(38, 38, 69, 0.968);
+    width: 60px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+
+.buy-btn:hover{
+
+   background-color:  darksalmon;
+   cursor: pointer;
+   
 }
 
 .close-btn {
@@ -215,7 +260,7 @@ p {
 }
 
 .dark-theme {
-    background-color: midnightblue;
+    background-color: rgba(38, 38, 69, 0.968);
 }
 
 .icon {
@@ -226,7 +271,7 @@ p {
 .footer {
     display: flex;
     flex-direction: row;
-    background-color: darksalmon;
+    background-color: salmon
 }
 
 .change-color-field {
@@ -240,4 +285,5 @@ p {
     width: 100%;
     text-align: center;
     background-color: white;
+    z-index: 1;
 }
