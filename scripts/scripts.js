@@ -1,62 +1,64 @@
-import rackets from "./data.js"
+import { rackets, sneakers } from "./data.js"
 
-function addSection() {
-  const section = document.createElement("div")
+function addSection(wrapper) {
+  const section = document.createElement("ul")
   section.classList.add("items")
-  const wrapper = document.querySelector(".rackets")
-  wrapper.insertBefore(section, wrapper.children[1])
+  wrapper.append(section)
+  return section
 }
-addSection()
 
-Object.values(rackets).map((el) => {
-  const card = document.createElement("div")
-  card.classList.add("item")
+function createItems(items, container) {
+  items.forEach((el) => {
+    const card = document.createElement("li")
+    card.classList.add("item")
+    container.append(card)
 
-  const cards = document.querySelector(".items")
-  cards.insertBefore(card, cards.children[1])
+    const itemImg = document.createElement("img")
+    itemImg.classList.add("item-img")
+    itemImg.src = `${el.imgUrl}`
+    itemImg.alt = `${el.alt}`
+    card.insertBefore(itemImg, card.children[1])
 
-  const itemImg = document.createElement("img")
-  itemImg.classList.add("item-img")
-  itemImg.src = `${el.imgUrl}`
-  itemImg.alt = `${el.alt}`
-  card.insertBefore(itemImg, card.children[1])
+    const itemName = document.createElement("h2")
+    itemName.classList.add("item-name")
+    itemName.append(el.modelName)
+    card.insertBefore(itemName, card.children[2])
 
-  const itemName = document.createElement("h2")
-  itemName.classList.add("item-name")
-  itemName.innerHTML += `${el.modelName}`
-  card.insertBefore(itemName, card.children[2])
+    const itemDate = document.createElement("p")
+    itemDate.classList.add("item-date")
+    card.insertBefore(itemDate, card.children[3])
+    itemDate.append(el.date)
 
-  const itemDate = document.createElement("p")
-  itemDate.classList.add("item-date")
-  card.insertBefore(itemDate, card.children[3])
-  itemDate.innerHTML += `${el.date}`
-
-  const buyBtn = document.createElement("button")
-  buyBtn.classList.add("buy-btn")
-  buyBtn.addEventListener("click", function () {
-    document.querySelector("#my-modal").classList.add("open")
+    const buyBtn = document.createElement("button")
+    buyBtn.classList.add("buy-btn")
+    buyBtn.addEventListener("click", function () {
+      document.querySelector("#my-modal").classList.add("open")
+    })
+    card.insertBefore(buyBtn, card.children[4])
+    buyBtn.append("Купить")
   })
-  card.insertBefore(buyBtn, card.children[4])
-  buyBtn.innerText += `Купить`
-})
+}
+
+const racketsContainer = addSection(document.querySelector(".rackets"))
+const sneakersContainer = addSection(document.querySelector(".sneakers"))
+
+createItems(rackets, racketsContainer)
+createItems(sneakers, sneakersContainer)
 
 const closeCartBtn = document.querySelector("#close-cart")
-const buyItem = document.querySelector("#buy-item")
+const buyItem = document.querySelector("#my-modal")
 
 closeCartBtn.addEventListener("click", function () {
   document.querySelector("#my-modal").classList.remove("open")
 })
 
-buyItem.addEventListener("click", function () {
+buyItem.addEventListener("submit", function (event) {
   alert("Поздравляем с покупкой!")
+  event.currentTarget.reset()
+  event.currentTarget.classList.remove("open")
 })
 
 const switcher = document.querySelector(".switch")
 switcher.addEventListener("click", function () {
-  const elem = document.querySelector(".product-range")
-  elem.classList.toggle("dark-theme")
-  const elem1 = document.querySelector(".main-menu")
-  elem1.classList.toggle("main-menu-dark")
-  const elem2 = document.querySelector(".title")
-  elem2.classList.toggle("h1-dark")
+  document.body.classList.toggle("dark-theme")
 })

@@ -10,48 +10,46 @@
 </head>
 
 <body class="wrapper">
-    <nav class="main-menu">
-        <div class="left-side">
+    <header class="main-menu">
+
+
+        <nav class="left-side">
             <ul class="categories">
-                <li class="product-type"> <a href="#rackets-section" ">Ракетки</a></li>
-            <li class="product-type "><a href="#sneakers-section ">Кроссовки</a></li>
-            <li class="product-type "><a href="#t-shorts-section "">Футболки</a>
+                <li class="product-type">
+                    <a href="#rackets-section">
+                        <p>Ракетки</p>
+                    </a>
+                </li>
+                <li class="product-type ">
+                    <a href="#sneakers-section ">
+                        <p>Кроссовки</p>
+                    </a>
+                </li>
+                <li class="product-type ">
+                    <a href="#t-shorts-section ">
+                        <p>Футболки</p>
+                    </a>
                 </li>
             </ul>
-        </div>
+        </nav>
+
         <div class="right-side">
-            <span>светлая тема</span>
+            <span><img class="icon" src='./img/util/sunny.png' alt="светлая тема"></span>
             <input class="switch" type="checkbox">
-            <span>темная тема</span>
+            <span><img class="icon" src='./img/util/dark.png' alt="темная тема"></span>
         </div>
-    </nav>
+    </header>
     <main class="product-range">
         <h1 class="title">Одежда, обувь и инвентарь для большого тенниса</h1>
         <section class="rackets" id="rackets-section">
-            <h2>Ракетки</h2>
-
-
-
+            <h2 class="name-of-section">Ракетки</h2>
         </section>
         <section class="sneakers" id="sneakers-section">
-            <h2>Кроссовки</h2>
-            <div class="items">
-                <div class="item">Head</div>
-                <div class="item">Babolat</div>
-                <div class="item">Technifibre</div>
-                <div class="item">Prince</div>
-                <div class="item">Head</div>
-                <div class="item">Head</div>
-                <div class="item">Babolat</div>
-                <div class="item">Technifibre</div>
-                <div class="item">Prince</div>
-                <div class="item">Head</div>
-                <div class="item">Technifibre</div>
-
+            <h2 class="name-of-section">Кроссовки</h2>
         </section>
 
         <section class="t-shorts" id="t-shorts-section">
-            <h2>Футболки</h2>
+            <h2 class="name-of-section">Футболки</h2>
             <div class="items">
                 <div class="item">Head</div>
                 <div class="item">Babolat</div>
@@ -71,46 +69,59 @@
         <button type="submit" class="back-to-top" id="ontop-btn">Наверх</button>
         <form class="modal" id="my-modal">
             <div class="cart-box">
-                <h3>Корзина</h1>
-                    <div>
-                        <p>Укажите необходимое количество</p>
-                        <input type="text" placeholder="Введите число"></input>
-                    </div>
+                <h3>Корзина</h3>
+                <div>
+                    <p>Укажите необходимое количество</p>
+                    <input placeholder="Введите число" required type="number" min="1" max="500"></input>
+                </div>
 
-                    <div>
-                        <p>Выберите цвет</p>
-                        <input type="radio">
+                <div>
+                    <p>Выберите цвет</p>
+                    <div class="change-color-field">
+                        <input type="radio" name="color" required>
                         <p>Белый</p>
-                </h3>
-                </input>
-                <input type="radio">
-                <p>Желтый</p>
-                </h3>
-                </input>
-                <input type="radio">
-                <p>Зеленый</p>
-                </h3>
-                </input>
-                <input type="radio">
-                <p>Красный</p>
-                </h3>
-                </input>
+                        </input>
+                        <input type="radio" name="color">
+                        <p>Желтый</p>
+                        </input>
+                        <input type="radio" name="color">
+                        <p>Зеленый</p>
+                        </input>
+                        <input type="radio" name="color">
+                        <p>Красный</p>
+                        </input>
+                    </div>
                 </div>
                 <div>
                     <p>Комментарий к заказу</p>
-                    <input type="text" placeholder="Текст Вашего комментария"></input>
+                    <input type="text" placeholder="Текст Вашего комментария" maxlength="2000"></input>
                 </div>
                 <button class="buy-btn" id="buy-item">Купить</button>
-                <button class="close-btn" id="close-cart">Закрыть</button>
-
+                <button class="close-btn" id="close-cart" type="reset">Закрыть</button>
             </div>
         </form>
     </main>
 
     <footer>
-        <p>2023</p>
+        <ul class="footer">
+            <li>
+                <a href="#rackets-section">
+                    <p>Ракетки</p>
+                </a>
+            </li>
+            <li>
+                <a href="#sneakers-section ">
+                    <p>Кроссовки</p>
+                </a>
+            </li>
+            <li>
+                <a href="#t-shorts-section ">
+                    <p>Футболки</p>
+                </a>
+            </li>
+        </ul>
     </footer>
-    <script src="./scripts/data.js"></script>
+    <script src="./scripts/data.js" type="module"></script>
     <script src="./scripts/scripts.js" type="module"></script>
 
 </body>
