@@ -27,7 +27,7 @@ function createItems(items, container) {
     const itemDate = document.createElement("p")
     itemDate.classList.add("item-date")
     card.insertBefore(itemDate, card.children[3])
-    itemDate.append(el.date)
+    itemDate.append(`Дата добавления на сайт:${el.date}`)
 
     const buyBtn = document.createElement("button")
     buyBtn.classList.add("buy-btn")

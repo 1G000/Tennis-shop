@@ -30,7 +30,6 @@ span {
 }
 
 p {
-    font-size: 20px;
     color: black
 }
 
@@ -80,9 +79,8 @@ p {
 
 .product-type :hover {
     text-decoration: underline;
-color: rgb(12, 12, 81);
-transform: translateY(-0.9px);
-
+    color: rgb(12, 12, 81);
+    transform: translateY(-0.9px);
 }
 
 .product-range {
@@ -96,7 +94,6 @@ transform: translateY(-0.9px);
     flex-direction: column;
     align-items: center;
     padding-top: 40px;
-   
 }
 
 .sneakers {
@@ -104,7 +101,6 @@ transform: translateY(-0.9px);
     flex-direction: column;
     align-items: center;
     padding-top: 40px;
-  
 }
 
 .bags {
@@ -112,7 +108,6 @@ transform: translateY(-0.9px);
     flex-direction: column;
     align-items: center;
     padding-top: 40px;
-    
 }
 
 .items {
@@ -128,30 +123,29 @@ transform: translateY(-0.9px);
     flex-direction: column;
     align-items: center;
     width: 180px;
-    height: 330px;
+    height: 340px;
     padding: 10px;
     border: 1px solid salmon;
     background: #f2f6f3;
     border-radius: 40px;
     transition: box-shadow 0.2s ease-in-out;
     margin: 10px 10px;
-    }
+}
 
-    .dark-theme .item {
-        background: rgba(127, 127, 208, 0.968);
-        border: 0;
-    }
+.dark-theme .item {
+    background: rgba(127, 127, 208, 0.968);
+    border: 0;
+}
 
 .item:hover {
-    
-        box-shadow: 0px 20px 30px rgba(250, 128, 114, 0.5);
-        transform: translateY(-5px);
-    }
-    .dark-theme .item:hover {
-        box-shadow: none;
-                transform: translateY(-5px);
-    }
+    box-shadow: 0px 20px 30px rgba(250, 128, 114, 0.5);
+    transform: translateY(-5px);
+}
 
+.dark-theme .item:hover {
+    box-shadow: none;
+    transform: translateY(-5px);
+}
 
 .back-to-top {
     position: fixed;
@@ -176,13 +170,15 @@ transform: translateY(-0.9px);
 
 .item-date {
     color: rgb(0, 0, 0);
+    font-size: 15px;
 }
 
 .buy-btn {
+    margin: 5px;
     border: 0;
     background-color: salmon;
     width: 60px;
-    height: 25px;
+    height: 18px;
     border-radius: 5px;
     font-size: 15px;
 }
@@ -196,12 +192,9 @@ transform: translateY(-0.9px);
     font-size: 15px;
 }
 
-
-.buy-btn:hover{
-
-   background-color:  darksalmon;
-   cursor: pointer;
-   
+.buy-btn:hover {
+    background-color: darksalmon;
+    cursor: pointer;
 }
 
 .close-btn {
