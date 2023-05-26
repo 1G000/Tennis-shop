@@ -24,6 +24,10 @@ h2 {
     color: #f2f6f3;
 }
 
+.dark-theme .main-menu p {
+    color: white;
+}
+
 span {
     padding-left: 10px;
     padding-right: 10px;
@@ -31,10 +35,6 @@ span {
 
 p {
     color: black
-}
-
-.dark-theme p {
-    color: #f2f6f3;
 }
 
 .wrapper {
@@ -123,13 +123,13 @@ p {
     flex-direction: column;
     align-items: center;
     width: 180px;
-    height: 340px;
+    height: 350px;
     padding: 10px;
     border: 1px solid salmon;
     background: #f2f6f3;
     border-radius: 40px;
     transition: box-shadow 0.2s ease-in-out;
-    margin: 10px 10px;
+    margin: 20px 20px;
 }
 
 .dark-theme .item {
@@ -149,8 +149,25 @@ p {
 
 .back-to-top {
     position: fixed;
+    cursor: pointer;
     right: 2rem;
     bottom: 2rem;
+    background-color: salmon;
+    width: 80px;
+    height: 30px;
+    border-radius: 30px;
+}
+
+.dark-theme .back-to-top {
+    background-color: rgba(127, 127, 208, 1);
+}
+
+.back-to-top:hover {
+    background-color: darksalmon;
+}
+
+.dark-theme .back-to-top:hover {
+    background-color: rgba(127, 127, 208, 0.75);
 }
 
 .hidden {
@@ -166,30 +183,43 @@ p {
 .item-name {
     font-size: 17px;
     min-height: 45px;
+    text-align: center;
 }
 
-.item-date {
-    color: rgb(0, 0, 0);
-    font-size: 15px;
+.date-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-title {
+    text-align: center;
+}
+
+.date-value {
+    text-align: center;
+    font-style: italic;
 }
 
 .buy-btn {
     margin: 5px;
     border: 0;
     background-color: salmon;
-    width: 60px;
-    height: 18px;
+    width: 80px;
+    min-height: 20px;
     border-radius: 5px;
     font-size: 15px;
+    font-weight: 300;
 }
 
 .dark-theme .buy-btn {
     border: 0;
-    background-color: rgba(38, 38, 69, 0.968);
+    background-color: rgba(73, 73, 217, 0.968);
     width: 60px;
     height: 25px;
     border-radius: 5px;
     font-size: 15px;
+    width: 80px;
+    min-height: 20px;
 }
 
 .buy-btn:hover {
@@ -197,9 +227,9 @@ p {
     cursor: pointer;
 }
 
-.close-btn {
-    width: 60px;
-    height: 25px;
+.dark-theme .buy-btn:hover {
+    background-color: rgb(154, 54, 225);
+    cursor: pointer;
 }
 
 .modal {
@@ -220,7 +250,16 @@ p {
     z-index: 1;
     padding: 30px;
     background-color: white;
-    max-width: 400px;
+    min-width: 400px;
+}
+
+.cart-box p {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.change-color-field span {
+    font-size: 20px;
 }
 
 .open {
@@ -264,19 +303,139 @@ p {
 .footer {
     display: flex;
     flex-direction: row;
-    background-color: salmon
+    justify-content: flex-start;
+    background-color: salmon;
+    margin-top: 20px;
+}
+
+.footer li {
+    padding: 15px;
+}
+
+.footer li p {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.dark-theme .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: rgba(38, 38, 69, 0.968);
 }
 
 .change-color-field {
+    max-width: 400px;
     display: flex;
+    align-content: center;
     flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 10px;
 }
 
 .name-of-section {
+    padding-left: 0px;
+    padding-right: 0px;
     position: sticky;
     top: 46px;
     width: 100%;
     text-align: center;
     background-color: white;
     z-index: 1;
+}
+
+.dark-theme .name-of-section {
+    position: sticky;
+    top: 46px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(38, 38, 69, 0.968);
+    color: white;
+    z-index: 1;
+}
+
+.comment-text {
+    width: 400px;
+    height: 30px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.items-number {
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.buttons-area {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-area .buy-btn {
+    margin: 5px;
+    border: 0;
+    background-color: salmon;
+    width: 100px;
+    min-height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.buttons-area .buy-btn:hover {
+    background-color: darksalmon;
+    cursor: pointer;
+}
+
+.close-btn {
+    margin: 5px;
+    border: 0;
+    background-color: salmon;
+    width: 100px;
+    min-height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.close-btn:hover {
+    background-color: darksalmon;
+    cursor: pointer;
+}
+
+.cart-box h3 {
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.dark-theme .footer p {
+    color: white;
+}
+
+.dark-theme .right-side {
+    background-color: rgba(127, 127, 208, 0.968)
+}
+
+.dark-theme .cart-box {
+    background-color: rgba(127, 127, 208, 0.968)
+}
+
+.dark-theme .buttons-area .buy-btn {
+    background-color: rgba(73, 73, 217, 0.968);
+}
+
+.dark-theme .close-btn {
+    background-color: rgba(73, 73, 217, 0.968);
+}
+
+.dark-theme .close-btn:hover {
+    background-color: rgb(154, 54, 225);
+}
+
+.dark-theme .buttons-area .buy-btn:hover {
+    background-color: rgb(154, 54, 225);
+    ;
 }

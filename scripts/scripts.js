@@ -17,24 +17,36 @@ function createItems(items, container) {
     itemImg.classList.add("item-img")
     itemImg.src = `${el.imgUrl}`
     itemImg.alt = `${el.alt}`
-    card.insertBefore(itemImg, card.children[1])
+    card.append(itemImg)
 
     const itemName = document.createElement("h3")
     itemName.classList.add("item-name")
     itemName.append(el.modelName)
-    card.insertBefore(itemName, card.children[2])
+    card.append(itemName)
 
-    const itemDate = document.createElement("p")
-    itemDate.classList.add("item-date")
-    card.insertBefore(itemDate, card.children[3])
-    itemDate.append(`Дата добавления на сайт:${el.date}`)
+    const dateField = document.createElement("div")
+    dateField.classList.add("date-field")
+    card.append(dateField)
+
+    const dateTitle = document.createElement("p")
+    const dateValue = document.createElement("p")
+    dateField.classList.add("date-field")
+    dateValue.classList.add("date-value")
+    dateTitle.classList.add("date-title")
+    dateField.append(dateTitle)
+    dateField.append(dateValue)
+    dateTitle.append(`Дата добавления на сайт:`)
+    dateValue.append(el.date)
 
     const buyBtn = document.createElement("button")
     buyBtn.classList.add("buy-btn")
     buyBtn.addEventListener("click", function () {
+      const cartBox = document.querySelector(".cart-box")
+      cartBox.prepend(itemName)
+
       document.querySelector("#my-modal").classList.add("open")
     })
-    card.insertBefore(buyBtn, card.children[4])
+    card.append(buyBtn)
     buyBtn.append("Купить")
   })
 }
@@ -64,3 +76,23 @@ const switcher = document.querySelector(".switch")
 switcher.addEventListener("click", function () {
   document.body.classList.toggle("dark-theme")
 })
+
+const showOnPx = 100
+const backToTopButton = document.querySelector(".back-to-top")
+
+function scrollContainer() {
+  return document.documentElement || document.body
+}
+
+document.addEventListener("scroll", () => {
+  if (scrollContainer().scrollTop > showOnPx) {
+    backToTopButton.classList.remove("hidden")
+  } else {
+    backToTopButton.classList.add("hidden")
+  }
+})
+
+const goToTop = () => {
+  document.body.scrollIntoView({ behavior: "smooth" })
+}
+backToTopButton.addEventListener("click", goToTop)

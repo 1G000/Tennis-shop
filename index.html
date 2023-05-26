@@ -53,38 +53,38 @@
 
 
         </section>
-        <button type="submit" class="back-to-top" id="ontop-btn">Наверх</button>
+        <button type="submit" class="back-to-top hidden">Наверх</button>
         <form class="modal" id="my-modal">
             <div class="cart-box">
-                <h3>Корзина</h3>
                 <div>
-                    <p>Укажите необходимое количество</p>
-                    <input placeholder="Введите число" required type="number" min="1" max="500"></input>
+                    <p>Укажите необходимое количество:</p>
+                    <input class="items-number" placeholder="Введите число" required type="number" min="1" max="500"></input>
                 </div>
 
                 <div>
-                    <p>Выберите цвет</p>
+                    <p>Выберите цвет:</p>
                     <div class="change-color-field">
                         <input type="radio" name="color" required>
-                        <p>Белый</p>
+                        <span>Белый</span>
                         </input>
                         <input type="radio" name="color">
-                        <p>Желтый</p>
+                        <span>Желтый</span>
                         </input>
                         <input type="radio" name="color">
-                        <p>Зеленый</p>
+                        <span>Зеленый</span>
                         </input>
                         <input type="radio" name="color">
-                        <p>Красный</p>
+                        <span>Красный</span>
                         </input>
                     </div>
                 </div>
                 <div>
-                    <p>Комментарий к заказу</p>
-                    <input type="text" placeholder="Текст Вашего комментария" maxlength="2000"></input>
+                    <p>Комментарий к заказу:</p>
+                    <input class="comment-text" type="text" placeholder="Текст Вашего комментария" maxlength="2000"></input>
                 </div>
-                <button class="buy-btn" id="buy-item">Купить</button>
-                <button class="close-btn" id="close-cart" type="reset">Закрыть</button>
+                <div class="buttons-area"> <button class="buy-btn" id="buy-item">Купить</button>
+                    <button class="close-btn" id="close-cart" type="reset">Закрыть</button>
+                </div>
             </div>
         </form>
     </main>
