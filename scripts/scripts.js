@@ -24,6 +24,10 @@ function createItems(items, container) {
     itemName.append(el.modelName)
     card.append(itemName)
 
+    const orderName = document.createElement("h3")
+    orderName.classList.add("order-name")
+    orderName.append(el.modelName)
+
     const dateField = document.createElement("div")
     dateField.classList.add("date-field")
     card.append(dateField)
@@ -42,7 +46,8 @@ function createItems(items, container) {
     buyBtn.classList.add("buy-btn")
     buyBtn.addEventListener("click", function () {
       const cartBox = document.querySelector(".cart-box")
-      cartBox.prepend(itemName)
+
+      cartBox.prepend(orderName)
 
       document.querySelector("#my-modal").classList.add("open")
     })
@@ -64,9 +69,11 @@ const buyItem = document.querySelector("#my-modal")
 
 closeCartBtn.addEventListener("click", function () {
   document.querySelector("#my-modal").classList.remove("open")
+  document.querySelector(".order-name").remove()
 })
 
 buyItem.addEventListener("submit", function (event) {
+  document.querySelector(".order-name").remove()
   alert("Поздравляем с покупкой!")
   event.currentTarget.reset()
   event.currentTarget.classList.remove("open")
