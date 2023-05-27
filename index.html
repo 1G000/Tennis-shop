@@ -53,9 +53,10 @@
 
 
         </section>
-        <button type="submit" class="back-to-top hidden">Наверх</button>
+        <button type="button" class="back-to-top hidden">Наверх</button>
         <form class="modal" id="my-modal">
             <div class="cart-box">
+                <h3 class="order-name">Купить</h3>
                 <div>
                     <p>Укажите необходимое количество:</p>
                     <input class="items-number" placeholder="Введите число" required type="number" min="1" max="500"></input>
@@ -64,18 +65,26 @@
                 <div>
                     <p>Выберите цвет:</p>
                     <div class="change-color-field">
-                        <input type="radio" name="color" required>
-                        <span>Белый</span>
-                        </input>
-                        <input type="radio" name="color">
-                        <span>Желтый</span>
-                        </input>
-                        <input type="radio" name="color">
-                        <span>Зеленый</span>
-                        </input>
-                        <input type="radio" name="color">
-                        <span>Красный</span>
-                        </input>
+                        <label class="radio-label">
+                            <input type="radio" name="color" required />
+                            <span>Белый</span>
+                        </label>
+
+                        <label class="radio-label">
+                            <input type="radio" name="color" />
+                            <span>Желтый</span>
+                        </label>
+
+                        <label class="radio-label">
+                            <input type="radio" name="color" />
+                            <span>Зеленый</span>
+                        </label>
+
+                        <label class="radio-label">
+                            <input type="radio" name="color" />
+                            <span>Красный</span>
+                        </label>
+
                     </div>
                 </div>
                 <div>
